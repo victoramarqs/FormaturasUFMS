@@ -36,11 +36,10 @@ exports.studentStats = catchAsync(async (req, res, next) => {
 });
 
 exports.notConfirmedStudents = catchAsync(async (req, res, next) => {
-  const students = await Student.find({ confirmationAllEvents: false }).select([
-    '-rga',
-    '-email',
-    '-__v',
-  ]);
+  const students = await Student.find({
+    confirmationAllEvents: false,
+    yearGraduation: req.params.year,
+  }).select(['-rga', '-email', '-__v']);
 
   res.status(200).json({
     status: 'success',
