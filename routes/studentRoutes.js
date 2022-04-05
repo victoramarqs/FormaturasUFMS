@@ -9,7 +9,7 @@ router
   .get(studentController.studentStats)
   .post(studentController.subscribeStudent);
 
-router.route('/comission').get(studentController.notConfirmedStudents);
+router.route('/comission/:year').get(studentController.notConfirmedStudents);
 router.route('/:user').get(studentController.studentsAcess);
 
 module.exports = router;
