@@ -6,7 +6,7 @@ const router = express.Router();
 
 router
   .route('/')
-  .get(studentController.studentStats)
+  // .get(studentController.studentStats)
   .post(studentController.subscribeStudent);
 
 router.route('/comission/:year').get(studentController.notConfirmedStudents);
