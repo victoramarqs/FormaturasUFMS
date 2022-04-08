@@ -32,7 +32,6 @@ const studentSchema = new mongoose.Schema(
         message:
           "This RGA is not from FACOM or it is invalid! Please contact graduation's committee",
       },
-      unique: true,
     },
     name: {
       type: String,
